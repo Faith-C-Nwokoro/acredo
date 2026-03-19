@@ -123,48 +123,23 @@ nav.scrolled{background:rgba(2,2,8,.96)}
 .nd-btns{display:flex;gap:10px;margin-top:12px;padding-top:14px;border-top:1px solid var(--border)}
 .nd-btns a{flex:1;padding:11px 0;text-align:center;justify-content:center}
 
-/* ══════════════════ HERO ══════════════════ */
-.hero{
-  position:relative;z-index:1;min-height:100svh;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;overflow:hidden;
-  padding:calc(var(--nav-h) + 56px) clamp(20px,6vw,80px) 56px;
-}
-.hero-spot{position:absolute;width:900px;height:600px;left:50%;top:50%;transform:translate(-50%,-55%);background:radial-gradient(ellipse,rgba(91,95,238,.08) 0%,rgba(34,211,238,.04) 40%,transparent 70%);pointer-events:none}
-.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.021) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.021) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black,transparent);pointer-events:none}
+/* ══════════════════ HERO - defined inline below ══════════════════ */
+.hero-spot{display:none}/* unused */
+.scene-h{display:none}/* unused */
+.scene-fade{display:none}/* unused */
+.float-card{display:none}/* unused */
 
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(91,95,238,.1);border:1px solid rgba(91,95,238,.28);border-radius:100px;padding:5px 14px 5px 7px;font-size:.71rem;font-weight:500;color:var(--indigo-b);margin-bottom:24px;animation:fadeUp .6s ease both}
-.eyebrow-dot{width:18px;height:18px;border-radius:50%;background:var(--indigo);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.eyebrow-dot svg{width:9px;height:9px}
-
-.hero-h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,8.5vw,7.2rem);font-weight:800;line-height:.93;letter-spacing:clamp(-1px,-0.04em,-3px);margin-bottom:20px;animation:fadeUp .7s .1s ease both}
-@media(max-width:480px){.hero-h1{letter-spacing:-1px}}
-.h1a{display:block;color:var(--text)}
-.h1b{display:block;-webkit-text-fill-color:transparent;-webkit-background-clip:text;background-clip:text;background-image:linear-gradient(105deg,var(--indigo-b) 0%,var(--cyan) 48%,var(--violet) 100%);background-size:300% 100%;animation:fadeUp .7s .1s ease both,gm 7s 1s ease-in-out infinite alternate}
-@keyframes gm{0%{background-position:0 50%}100%{background-position:100% 50%}}
-
-.hero-sub{font-size:clamp(.88rem,1.8vw,1.08rem);color:var(--text2);font-weight:300;max-width:500px;margin:0 auto 36px;line-height:1.8;animation:fadeUp .7s .2s ease both}
-
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:60px;animation:fadeUp .7s .3s ease both}
+/* Buttons (shared across hero + CTA section) */
 .btn-hp{display:inline-flex;align-items:center;gap:9px;background:var(--indigo);color:#fff;padding:13px 30px;border-radius:12px;font-size:.93rem;font-weight:500;font-family:'DM Sans',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 0 44px rgba(91,95,238,.27);position:relative;overflow:hidden}
 .btn-hp::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1),transparent 60%);opacity:0;transition:opacity .3s}
 .btn-hp:hover{background:#4951E8;transform:translateY(-3px);box-shadow:0 12px 52px rgba(91,95,238,.44)}
 .btn-hp:hover::after{opacity:1}
-.btn-hp svg,.btn-ho svg{transition:transform .3s}
 .btn-hp:hover svg{transform:translateX(4px)}
 .btn-ho{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border2);color:var(--text2);padding:13px 22px;border-radius:12px;font-size:.93rem;font-weight:400;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .25s;cursor:pointer}
 .btn-ho:hover{border-color:rgba(34,211,238,.4);color:var(--cyan);transform:translateY(-2px)}
-
-/* Hero scene */
-.hero-scene{position:relative;width:100%;max-width:900px;animation:fadeUp .8s .4s ease both}
-.scene-h{position:relative;width:100%;height:clamp(260px,48vw,415px)}
-.float-card{position:absolute;background:rgba(14,14,26,.88);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 16px;backdrop-filter:blur(18px);box-shadow:0 18px 54px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);animation:flt var(--dur,9s) var(--del,0s) ease-in-out infinite;white-space:nowrap}
-@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(var(--fy,-14px))}}
-.fc-l{font-size:.59rem;font-weight:500;letter-spacing:.8px;text-transform:uppercase;color:var(--text3);margin-bottom:4px}
-.fc-v{font-family:'Syne',sans-serif;font-weight:800;line-height:1}
-.fc-s{font-size:.67rem;color:var(--text2);margin-top:3px}
-@media(max-width:560px){.fc-side{display:none}.scene-h{height:240px}}
-.scene-fade{position:absolute;bottom:0;left:0;right:0;height:90px;background:linear-gradient(to top,var(--black),transparent);pointer-events:none}
+.h1b{display:block;-webkit-text-fill-color:transparent;-webkit-background-clip:text;background-clip:text;background-image:linear-gradient(105deg,var(--indigo-b) 0%,var(--cyan) 48%,var(--violet) 100%);background-size:300% 100%;animation:gm 7s 1s ease-in-out infinite alternate}
+@keyframes gm{0%{background-position:0 50%}100%{background-position:100% 50%}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
 /* ══════════════════ STATS ══════════════════ */
 .stats-wrap{position:relative;z-index:1;padding:0 clamp(20px,5vw,72px);margin-bottom:86px}
@@ -260,39 +235,33 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:28
 <!-- ══ NAV ══ -->
 <nav id="nav">
   <a href="{{ route('landing') }}" class="logo">
-    <!-- Real Acredo AC logo: 3D interlocked A + sweeping C -->
-    <svg class="logo-mark" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- AC Logo: bold interlocked A + C, 3D blue-cyan gradient (matches app sidebar exactly) -->
+    <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="la-a" x1="5" y1="3" x2="20" y2="44" gradientUnits="userSpaceOnUse">
-          <stop offset="0%"  stop-color="#A5AEFF"/><stop offset="48%" stop-color="#5458EA"/><stop offset="100%" stop-color="#2A30B5"/>
+        <linearGradient id="la" x1="4" y1="3" x2="26" y2="46" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#9AAEFF"/><stop offset="48%" stop-color="#5060EE"/><stop offset="100%" stop-color="#2535C0"/>
         </linearGradient>
-        <linearGradient id="la-c" x1="22" y1="7" x2="42" y2="40" gradientUnits="userSpaceOnUse">
-          <stop offset="0%"  stop-color="#80EEFF"/><stop offset="52%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#0680A0"/>
+        <linearGradient id="lad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#08124A" stop-opacity=".8"/><stop offset="100%" stop-color="#040828" stop-opacity=".45"/>
         </linearGradient>
-        <linearGradient id="la-sh" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
-          <stop offset="0%" stop-color="#0D1266" stop-opacity=".7"/><stop offset="100%" stop-color="#05082E" stop-opacity=".4"/>
+        <linearGradient id="lc" x1="16" y1="4" x2="48" y2="45" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#72EEFF"/><stop offset="52%" stop-color="#06B6D4"/><stop offset="100%" stop-color="#0A6878"/>
         </linearGradient>
       </defs>
-      <!-- C shadow depth -->
-      <path d="M 38,8 A 17,17 0 1,0 38,38" stroke="#0B4F66" stroke-width="8" fill="none" stroke-linecap="round" opacity=".5" transform="translate(1,1)"/>
+      <!-- A depth shadow -->
+      <polygon points="13.5,44 7.5,44 17.5,5 22.5,5" fill="url(#lad)" opacity=".7"/>
+      <polygon points="31,44 25,44 22.5,5 27.5,5" fill="url(#lad)" opacity=".7"/>
+      <rect x="12" y="24.5" width="20.5" height="5.5" fill="url(#lad)" opacity=".7"/>
+      <!-- A front -->
+      <polygon points="12,42 6,42 16,4 21,4" fill="url(#la)"/>
+      <polygon points="29.5,42 23.5,42 21,4 26,4" fill="url(#la)"/>
+      <rect x="10.5" y="23" width="21" height="5.2" fill="url(#la)"/>
+      <!-- C shadow -->
+      <path d="M 41,10.5 A 16.5,16.5 0 1,1 41,37" stroke="#030D22" stroke-width="9" fill="none" stroke-linecap="round" opacity=".55"/>
       <!-- C main -->
-      <path d="M 38,8 A 17,17 0 1,0 38,38" stroke="url(#la-c)" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M 40,9.5 A 15,15 0 1,1 40,36.5" stroke="url(#lc)" stroke-width="7.5" fill="none" stroke-linecap="round"/>
       <!-- C highlight -->
-      <path d="M 38,8 A 17,17 0 0,1 38,38" stroke="rgba(200,245,255,.2)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      <!-- A left leg shadow -->
-      <polygon points="16,4 22,4 12,43 6,43" fill="url(#la-sh)" transform="translate(1,1)"/>
-      <!-- A left leg -->
-      <polygon points="15,3 21,3 11,42 5,42" fill="url(#la-a)"/>
-      <!-- A right leg shadow -->
-      <polygon points="18,4 24,4 31,43 25,43" fill="url(#la-sh)" transform="translate(1,1)"/>
-      <!-- A right leg -->
-      <polygon points="17,3 23,3 30,42 24,42" fill="url(#la-a)"/>
-      <!-- A crossbar shadow -->
-      <rect x="8" y="25" width="20" height="6" fill="url(#la-sh)" transform="translate(1,1)"/>
-      <!-- A crossbar -->
-      <rect x="7" y="24" width="20" height="6" fill="url(#la-a)"/>
-      <!-- A peak highlight -->
-      <polygon points="15,3 21,3 19.5,7 16.5,7" fill="rgba(180,190,255,.28)"/>
+      <path d="M 40,9.5 A 15,15 0 0,1 40,36.5" stroke="rgba(200,245,255,.22)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
     </svg>
     <span class="logo-text">ACREDO</span>
   </a>
@@ -337,88 +306,392 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:28
 </div>
 
 <!-- ══ HERO ══ -->
+<style>
+/* ── HERO SPLIT LAYOUT ── */
+.hero{
+  position:relative;z-index:1;
+  min-height:100svh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:0;
+  padding:calc(var(--nav-h) + 40px) clamp(20px,5vw,80px) 60px;
+  overflow:hidden;
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-bottom:40px}
+  .hero-right{display:none}
+}
+.hero-left{position:relative;z-index:2;padding-right:40px}
+@media(max-width:900px){.hero-left{padding-right:0;display:flex;flex-direction:column;align-items:center}}
+
+/* Diagonal light beam */
+.hero-beam{
+  position:absolute;
+  top:-200px;left:-100px;right:0;bottom:-200px;
+  background:radial-gradient(ellipse 60% 80% at 30% 50%, rgba(91,95,238,.12) 0%, transparent 65%);
+  pointer-events:none;z-index:0;
+}
+/* Fine grid */
+.hero-grid-bg{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black,transparent);
+  pointer-events:none;z-index:0;
+}
+
+/* Eyebrow pill */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(91,95,238,.1);border:1px solid rgba(91,95,238,.28);
+  border-radius:100px;padding:5px 14px 5px 7px;
+  font-size:.72rem;font-weight:500;color:var(--indigo-b);
+  margin-bottom:22px;
+  animation:fadeUp .5s ease both;
+}
+.eyebrow-dot{width:18px;height:18px;border-radius:50%;background:var(--indigo);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.eyebrow-dot svg{width:9px;height:9px}
+
+/* HEADLINE */
+.hero-h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(3rem,5.5vw,5.6rem);
+  font-weight:800;
+  line-height:1.0;
+  letter-spacing:-2.5px;
+  margin-bottom:20px;
+  animation:fadeUp .6s .08s ease both;
+  position:relative;z-index:1;
+}
+.h1a{display:block;color:var(--text)}
+.h1b{
+  display:block;
+  -webkit-text-fill-color:transparent;
+  -webkit-background-clip:text;background-clip:text;
+  background-image:linear-gradient(105deg,var(--indigo-b) 0%,var(--cyan) 50%,var(--violet) 100%);
+  background-size:300% 100%;
+  animation:fadeUp .6s .08s ease both, gm 6s 1s ease-in-out infinite alternate;
+}
+
+/* Subtext */
+.hero-sub{
+  font-size:clamp(.88rem,1.2vw,1.05rem);
+  color:var(--text2);font-weight:300;
+  max-width:480px;
+  line-height:1.8;
+  margin-bottom:32px;
+  position:relative;z-index:1;
+  animation:fadeUp .6s .16s ease both;
+}
+@media(max-width:900px){.hero-sub{max-width:540px}}
+
+/* CTA row */
+.hero-cta{
+  display:flex;gap:12px;flex-wrap:wrap;
+  animation:fadeUp .6s .24s ease both;
+  margin-bottom:40px;
+  position:relative;z-index:1;
+}
+@media(max-width:900px){.hero-cta{justify-content:center}}
+
+/* Trust row */
+.trust-row{
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+  animation:fadeUp .6s .32s ease both;
+  position:relative;z-index:1;
+}
+@media(max-width:900px){.trust-row{justify-content:center}}
+.trust-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:.75rem;color:var(--text3);font-weight:400;
+}
+.trust-item svg{flex-shrink:0;opacity:.6}
+.trust-divider{width:1px;height:14px;background:var(--border2);flex-shrink:0}
+
+/* ── RIGHT SIDE – APP MOCKUP ── */
+.hero-right{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:flex-end;
+  height:100%;
+  padding-left:20px;
+}
+
+/* Main dashboard card */
+.mock-shell{
+  position:relative;
+  width:100%;
+  max-width:520px;
+  animation:fadeUp .7s .2s ease both;
+}
+
+/* Glow behind mockup */
+.mock-glow{
+  position:absolute;
+  inset:-60px;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(91,95,238,.18) 0%, transparent 70%);
+  pointer-events:none;filter:blur(20px);
+}
+
+/* Dashboard window frame */
+.mock-frame{
+  background:rgba(13,13,20,.92);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:
+    0 0 0 1px rgba(91,95,238,.15),
+    0 40px 100px rgba(0,0,0,.7),
+    inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter:blur(20px);
+}
+.mock-titlebar{
+  height:38px;
+  background:rgba(255,255,255,.03);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;padding:0 14px;gap:7px;
+}
+.mock-dot{width:10px;height:10px;border-radius:50%}
+.mock-body{padding:18px}
+
+/* Stat row inside mockup */
+.mock-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+.mock-stat{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;padding:12px 14px;
+}
+.mock-stat-l{font-size:.6rem;font-weight:600;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.mock-stat-v{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700}
+.mock-stat-s{font-size:.62rem;color:rgba(255,255,255,.35);margin-top:3px}
+
+/* Rep ring inside mockup */
+.mock-rep-row{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;padding:14px;margin-bottom:14px;
+}
+.mock-ring{width:56px;height:56px;flex-shrink:0}
+.mock-ring-info{flex:1;min-width:0}
+.mock-ring-label{font-size:.6rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px}
+.mock-ring-score{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,#818CF8,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mock-ring-sub{font-size:.65rem;color:rgba(255,255,255,.35);margin-top:2px}
+
+/* Progress bar inside mockup */
+.mock-bar-wrap{height:4px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:8px}
+.mock-bar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,#6366F1,#22D3EE)}
+
+/* Loan rows inside mockup */
+.mock-loan-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 0;
+}
+.mock-loan-row:not(:last-child){border-bottom:1px solid rgba(255,255,255,.05)}
+.mock-loan-type{font-size:.72rem;font-weight:500;color:rgba(255,255,255,.75)}
+.mock-loan-amt{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:rgba(255,255,255,.5)}
+.mock-badge{display:inline-flex;padding:2px 8px;border-radius:20px;font-size:.6rem;font-weight:700}
+.mb-green{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.25)}
+.mb-amber{background:rgba(245,158,11,.15);color:#fbbf24;border:1px solid rgba(245,158,11,.25)}
+
+/* Floating pill badges around mockup */
+.mock-float{
+  position:absolute;
+  background:rgba(13,13,20,.92);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:12px;
+  backdrop-filter:blur(18px);
+  box-shadow:0 12px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);
+  animation:flt var(--fd,9s) var(--fdel,0s) ease-in-out infinite;
+  white-space:nowrap;
+  z-index:10;
+}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(var(--fy,-12px))}}
+
+/* Scroll indicator */
+.scroll-hint{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:var(--text3);font-size:.68rem;font-weight:500;letter-spacing:.5px;
+  text-transform:uppercase;animation:fadeUp .6s .8s ease both;
+  z-index:2;
+}
+.scroll-mouse{
+  width:22px;height:34px;border:1.5px solid rgba(255,255,255,.15);border-radius:12px;
+  display:flex;justify-content:center;padding-top:6px;
+}
+.scroll-wheel{
+  width:3px;height:7px;background:rgba(255,255,255,.3);border-radius:2px;
+  animation:scrollWheel 2s ease-in-out infinite;
+}
+@keyframes scrollWheel{0%{opacity:1;transform:translateY(0)}60%{opacity:0;transform:translateY(10px)}100%{opacity:0;transform:translateY(10px)}}
+</style>
+
 <section class="hero">
-  <div class="hero-spot"></div>
+  <div class="hero-beam"></div>
   <div class="hero-grid-bg"></div>
 
-  <div class="eyebrow">
-    <span class="eyebrow-dot">
-      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-    </span>
-    Built on Stacks · Bitcoin-Secured DeFi
-  </div>
+  <!-- LEFT: TEXT -->
+  <div class="hero-left">
+    <div class="eyebrow">
+      <span class="eyebrow-dot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </span>
+      Built on Stacks · Bitcoin-Secured DeFi
+    </div>
 
-  <h1 class="hero-h1">
-    <span class="h1a">Credit moves at</span>
-    <span class="h1b">the speed of trust.</span>
-  </h1>
+    <h1 class="hero-h1">
+      <span class="h1a">Credit moves</span>
+      <span class="h1a">at the speed</span>
+      <span class="h1b">of trust.</span>
+    </h1>
 
-  <p class="hero-sub">Acredo is a structured credit and yield protocol on Stacks. Borrow against your on-chain reputation, NFTs, or projected yield — no overcollateralisation, no gatekeepers.</p>
+    <p class="hero-sub">
+      Acredo is a structured credit and yield protocol on Stacks.
+      Borrow against your on-chain reputation, NFTs, or projected yield —
+      no overcollateralisation, no gatekeepers.
+    </p>
 
-  <div class="hero-cta">
-    <a href="{{ route('dashboard') }}" class="btn-hp">
-      Get Started Free
-      <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-    <a href="#how" class="btn-ho">
-      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      How it works
-    </a>
-  </div>
+    <div class="hero-cta">
+      <a href="{{ route('dashboard') }}" class="btn-hp">
+        Get Started Free
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#how" class="btn-ho">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        How it works
+      </a>
+    </div>
 
-  <div class="hero-scene">
-    <div class="scene-h">
-      <!-- Orbit rings -->
-      <div style="position:absolute;left:50%;top:50%;width:470px;height:470px;margin:-235px 0 0 -235px;border-radius:50%;border:1px dashed rgba(255,255,255,.045);animation:spin 55s linear infinite;transform-origin:50% 50%"></div>
-      <div style="position:absolute;left:50%;top:50%;width:330px;height:330px;margin:-165px 0 0 -165px;border-radius:50%;border:1px dashed rgba(91,95,238,.1);animation:spinR 36s linear infinite;transform-origin:50% 50%">
-        <div style="position:absolute;top:-5px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#5B5FEE;box-shadow:0 0 11px #5B5FEE"></div>
+    <!-- Trust signals -->
+    <div class="trust-row">
+      <div class="trust-item">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Non-custodial
       </div>
-      <div style="position:absolute;left:50%;top:50%;width:210px;height:210px;margin:-105px 0 0 -105px;border-radius:50%;border:1px dashed rgba(34,211,238,.1);animation:spin 22s linear infinite;transform-origin:50% 50%">
-        <div style="position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#22D3EE;box-shadow:0 0 9px #22D3EE"></div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Open source
       </div>
-      <!-- Polyhedron -->
-      <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);width:250px;height:250px;animation:flt 10s ease-in-out infinite">
-        <svg viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="rg1" cx="38%" cy="32%"><stop offset="0%" stop-color="#818CF8" stop-opacity=".95"/><stop offset="55%" stop-color="#5B5FEE" stop-opacity=".55"/><stop offset="100%" stop-color="#22D3EE" stop-opacity=".08"/></radialGradient>
-            <radialGradient id="rg2" cx="62%" cy="58%"><stop offset="0%" stop-color="#22D3EE" stop-opacity=".6"/><stop offset="100%" stop-color="#818CF8" stop-opacity="0"/></radialGradient>
-            <filter id="pf" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur stdDeviation="4.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
-          <polygon points="125,21 205,78 198,163 125,198 52,163 45,78" fill="url(#rg1)" stroke="rgba(129,140,248,.43)" stroke-width="1" filter="url(#pf)"/>
-          <polygon points="125,21 205,78 125,123" fill="rgba(91,95,238,.37)" stroke="rgba(129,140,248,.33)" stroke-width=".7"/>
-          <polygon points="125,21 45,78  125,123" fill="rgba(34,211,238,.17)" stroke="rgba(34,211,238,.27)" stroke-width=".7"/>
-          <polygon points="205,78 198,163 125,123" fill="rgba(91,95,238,.17)" stroke="rgba(91,95,238,.24)" stroke-width=".7"/>
-          <polygon points="45,78  52,163 125,123" fill="rgba(124,58,237,.21)" stroke="rgba(124,58,237,.27)" stroke-width=".7"/>
-          <polygon points="198,163 125,198 52,163 125,123" fill="rgba(34,211,238,.1)" stroke="rgba(34,211,238,.17)" stroke-width=".7"/>
-          <circle cx="125" cy="117" r="25" fill="url(#rg2)" opacity=".63"/>
-          <circle cx="125" cy="117" r="7"  fill="rgba(255,255,255,.13)"/>
-          <circle cx="125" cy="125" r="74" stroke="url(#rg1)" stroke-width="1" fill="none" stroke-dasharray="3.5 12.5" style="animation:spin 20s linear infinite;transform-origin:125px 125px"/>
-        </svg>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        0 exploits
       </div>
-      <!-- Float cards -->
-      <div class="float-card" style="left:0%;top:22%;--dur:9s;--del:0s;--fy:-14px">
-        <div class="fc-l">Reputation Score</div>
-        <div class="fc-v" style="font-size:1.75rem;background:linear-gradient(135deg,#818CF8,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">780</div>
-        <div class="fc-s">Tier A · Top 15%</div>
-      </div>
-      <div class="float-card fc-side" style="right:0%;top:12%;--dur:12s;--del:1.5s;--fy:-12px">
-        <div class="fc-l">Vault APY</div>
-        <div class="fc-v" style="font-size:1.75rem;color:#10B981">12.4%</div>
-        <div class="fc-s">USDCx Yield Vault</div>
-      </div>
-      <div class="float-card fc-side" style="right:3%;bottom:18%;--dur:7s;--del:3s;--fy:-10px;padding:10px 14px">
-        <div style="display:flex;align-items:center;gap:7px">
-          <div style="width:6px;height:6px;border-radius:50%;background:#10B981;box-shadow:0 0 7px #10B981;flex-shrink:0"></div>
-          <span style="font-size:.69rem;font-weight:500;color:var(--text2)">Tx Confirmed</span>
-        </div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--text3);margin-top:3px">0x4f7a…c92b</div>
-      </div>
-      <div class="float-card" style="left:2%;bottom:22%;--dur:11s;--del:2s;--fy:-17px;padding:10px 14px">
-        <div class="fc-l">Borrow Limit</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:.88rem;font-weight:600;color:#A78BFA">2.5 sBTC</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        $4.2M TVL
       </div>
     </div>
-    <div class="scene-fade"></div>
+  </div>
+
+  <!-- RIGHT: APP MOCKUP -->
+  <div class="hero-right">
+    <div class="mock-shell">
+      <div class="mock-glow"></div>
+
+      <!-- Floating pill: APY -->
+      <div class="mock-float" style="top:-18px;right:40px;padding:10px 14px;--fd:10s;--fdel:0s;--fy:-14px">
+        <div style="font-size:.58rem;font-weight:600;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px">Vault APY</div>
+        <div style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:#10B981;line-height:1">12.4%</div>
+        <div style="display:flex;align-items:center;gap:5px;margin-top:4px">
+          <div style="width:5px;height:5px;border-radius:50%;background:#10B981;box-shadow:0 0 6px #10B981"></div>
+          <span style="font-size:.6rem;color:rgba(255,255,255,.35)">Live yield</span>
+        </div>
+      </div>
+
+      <!-- Floating pill: Tx -->
+      <div class="mock-float" style="bottom:30px;left:-20px;padding:9px 13px;--fd:8s;--fdel:2s;--fy:-10px">
+        <div style="display:flex;align-items:center;gap:7px">
+          <div style="width:7px;height:7px;border-radius:50%;background:#10B981;box-shadow:0 0 8px #10B981;flex-shrink:0;animation:pulse 2s infinite"></div>
+          <span style="font-size:.7rem;font-weight:500;color:rgba(255,255,255,.7)">Tx Confirmed</span>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:.6rem;color:rgba(255,255,255,.3);margin-top:3px">0x4f7a…c92b · 2s ago</div>
+      </div>
+
+      <!-- Main frame -->
+      <div class="mock-frame">
+        <!-- Titlebar -->
+        <div class="mock-titlebar">
+          <div class="mock-dot" style="background:#EF4444;opacity:.8"></div>
+          <div class="mock-dot" style="background:#F59E0B;opacity:.8"></div>
+          <div class="mock-dot" style="background:#10B981;opacity:.8"></div>
+          <div style="flex:1;display:flex;align-items:center;justify-content:center">
+            <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:3px 12px;font-size:.62rem;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace">app.acredo.finance/dashboard</div>
+          </div>
+        </div>
+
+        <div class="mock-body">
+          <!-- Stat cards -->
+          <div class="mock-stats">
+            <div class="mock-stat">
+              <div class="mock-stat-l">Reputation Score</div>
+              <div class="mock-stat-v" style="background:linear-gradient(135deg,#818CF8,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">780</div>
+              <div class="mock-stat-s">Tier A · Top 15%</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-l">Borrow Limit</div>
+              <div class="mock-stat-v" style="color:rgba(255,255,255,.85)">2.5 <span style="font-size:.7rem;color:rgba(255,255,255,.4)">sBTC</span></div>
+              <div class="mock-stat-s">Based on Tier A</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-l">Total Deposited</div>
+              <div class="mock-stat-v" style="color:rgba(255,255,255,.85)">$10,240</div>
+              <div class="mock-stat-s">Vault + Pool</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-l">Active Loans</div>
+              <div class="mock-stat-v" style="color:rgba(255,255,255,.85)">2</div>
+              <div class="mock-stat-s">1 borrower · 1 lender</div>
+            </div>
+          </div>
+
+          <!-- Rep ring row -->
+          <div class="mock-rep-row">
+            <svg class="mock-ring" viewBox="0 0 56 56" fill="none">
+              <defs><linearGradient id="mrg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#22D3EE"/></linearGradient></defs>
+              <circle cx="28" cy="28" r="23" stroke="rgba(255,255,255,.07)" stroke-width="4" fill="none"/>
+              <circle cx="28" cy="28" r="23" stroke="url(#mrg)" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="144" stroke-dashoffset="32" transform="rotate(-90 28 28)"/>
+              <text x="28" y="24" text-anchor="middle" font-size="9" font-weight="700" fill="#F8FAFC" font-family="Inter">780</text>
+              <text x="28" y="34" text-anchor="middle" font-size="6" fill="rgba(255,255,255,.35)" font-family="Inter">/1000</text>
+            </svg>
+            <div class="mock-ring-info">
+              <div class="mock-ring-label">On-Chain Reputation</div>
+              <div class="mock-ring-score">TIER A</div>
+              <div class="mock-ring-sub">vilansh.btc · 847 days · 4 repaid</div>
+              <div class="mock-bar-wrap"><div class="mock-bar-fill" style="width:78%"></div></div>
+            </div>
+          </div>
+
+          <!-- Active loans -->
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px 13px">
+            <div style="font-size:.6rem;font-weight:600;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px">Active Loans</div>
+            <div class="mock-loan-row">
+              <div>
+                <div class="mock-loan-type">Reputation Loan</div>
+                <div class="mock-loan-amt">0.5000 sBTC · 8% · 28d left</div>
+              </div>
+              <span class="mock-badge mb-green">ACTIVE</span>
+            </div>
+            <div class="mock-loan-row">
+              <div>
+                <div class="mock-loan-type">NFT Loan</div>
+                <div class="mock-loan-amt">0.3000 sBTC · 10% · 5d left</div>
+              </div>
+              <span class="mock-badge mb-amber">WARNING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    Scroll
   </div>
 </section>
 
